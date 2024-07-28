@@ -1,0 +1,61 @@
+.categories {
+    padding: 20px;
+  }
+  
+  .category-section {
+    margin-bottom: 35px;
+  }
+  
+  .category-section h2 {
+    background-color:#448249;
+    color: white;
+    font-size :2rem;;
+    text-align: center;
+    padding: 2rem;
+  
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Adds space between cards */
+    margin-left: 70px;
+  }
+  
+  .category-card {
+    width: 20rem;
+    background-color: #ddd;
+    display: flex;
+    margin-top: 70px;
+    flex-direction: column;
+    height: 50vh;
+    margin-right: 40px;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+  }
+  
+  .category-card-img {
+    height: 150px; /* Set a specific height for the images */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  .category-card-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center; /* Center text horizontally */
+    justify-content: center; /* Center text vertically */
+    text-align: center; /* Center text horizontally */
+    background-color: rgb(204, 204, 159);
+  }
+  
+  .category-card-title {
+    margin-top: 15px;
+  }
+  
+  .category-card-text {
+    font-size: 1rem;
+    color: rgba(46, 46, 46, 0.753);
+  }
+  

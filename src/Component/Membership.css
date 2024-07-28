@@ -1,0 +1,85 @@
+/* src/Membership.css */
+
+/* Container for the cards */
+.membership-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap onto multiple lines if needed */
+  justify-content: center; /* Center cards horizontally */
+  gap: 20px;
+  padding: 20px;
+  background-color: #ddd;
+}
+
+.membership-header {
+  background-color: #448249;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px; /* Reduced padding */
+  width: 300px; /* Adjusted width */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+  max-height: 500px; /* Optional: Set a max-height to ensure cards don't grow too large */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes content evenly */
+}
+
+/* Reduced size of the image */
+.card-image {
+  width: 290px;
+  height: 160px; /* Adjusted height */
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 15px; /* Adjusted margin */
+}
+
+.card-title {
+  font-size: 1.2em; /* Reduced font size */
+  margin-top: -10px; /* Reduced margin */
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-top: -10px;
+  margin-bottom: -10px; /* Adjust if necessary */
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* Reduced margin */
+  color: rgb(40, 164, 21);
+}
+
+.feature.unavailable {
+  color: red;
+}
+
+.shop-button {
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9em; /* Reduced font size */
+  padding: 8px 16px; /* Reduced padding */
+  margin-top: 10px; /* Reduced margin */
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.shop-button:hover {
+  background-color: #0056b3;
+  opacity: 0.8; /* Slightly different opacity on hover */
+}

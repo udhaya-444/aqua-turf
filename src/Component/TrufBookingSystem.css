@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(198, 23, 23, 0.1);
+    border-radius: 10px;
+    position: relative; /* Added this for the close button positioning */
+}
+
+h2 {
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #666666;
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+option {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #555555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.book-now-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.book-now-btn:hover {
+    background-color: #218838;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}

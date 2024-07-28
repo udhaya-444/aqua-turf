@@ -1,0 +1,11 @@
+/* CustomCarousel.css */
+.carousel-container {
+    margin-bottom: 60px;
+    width: 150%;
+    height: 100vh;
+  }
+  
+  .carousel-container img {
+    width: 30%;
+    height: 10%;
+  }

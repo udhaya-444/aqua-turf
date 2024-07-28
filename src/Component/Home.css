@@ -1,0 +1,61 @@
+/* src/Home.css */
+
+.home-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: row-reverse; /* This switches the order of the items */
+}
+
+.carousel-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.home-image {
+  width: 80%;
+  height: 60%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  margin-top: 150px;
+  margin-left: 60px; 
+  margin-bottom: 300px;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 50px;
+}
+
+.content-container h1 {
+  margin-bottom: 20px;
+}
+
+.content-container p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.get-started-button {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+  padding: 10px 20px; /* Adjusted padding */
+  background-color: #347134;
+  border-radius: 50px; /* Adjusted for rounded button */
+  width: 150px;
+  transition: background-color 0.3s, color 0.3s;
+  border: none; /* Ensure no border */
+}
+
+.get-started-button:hover {
+  background-color: #5cb85c; /* Adjusted hover background color */
+}
