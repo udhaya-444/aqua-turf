@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import './Aquasel.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 
 import home1 from '../assets/images/home1.jpg'; 
 import home2 from '../assets/images/home2.jpg'; 
@@ -10,7 +11,7 @@ import home3 from '../assets/images/home3.jpg';
 import selimgc1 from '../assets/images/selimgc1.jpeg';
 import selimgc2 from '../assets/images/selimgc2.jpeg';
 import selimgc3 from '../assets/images/selimgc3.jpeg';
-const Selfturf = () => {
+const Aquasel = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -27,6 +28,7 @@ const Selfturf = () => {
     { id: 4, title: <b>'The Moss Dragon of Brittlekeep'</b>, author: <b>'Ashley Capes'</b>, imgSrc: selimgc1 },
     { id: 5, title: <b>'A Match Made in Hell'</b>, author: <b>'Traci Lovelot'</b>, imgSrc: selimgc3},
     { id: 6, title: <b>'Vampires and Villains'</b>, author: <b>'Elizabeth Pantley'</b>, imgSrc: selimgc2 },
+    
     // Add more books as needed
   ];
 
@@ -57,7 +59,9 @@ const Selfturf = () => {
                 <img src={book.imgSrc} alt={book.title} />
                 <p className="book-title">{book.title}</p>
                 <p className="book-author">{book.author}</p>
-                <button className="go-button">View</button>
+                <Link to="/time">
+                  <button className="go-button">View</button>
+                </Link>
               </div>
             </div>
           ))}
@@ -78,4 +82,4 @@ const Selfturf = () => {
   );
 };
 
-export default Selfturf;
+export default Aquasel;

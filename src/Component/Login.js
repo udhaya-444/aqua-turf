@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import 'boxicons';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -10,6 +9,7 @@ const Login = () => {
   });
 
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,8 +25,12 @@ const Login = () => {
       setError('Password must be at least eight characters long');
       return;
     }
+    
+    // Here, you can add your logic for authentication, such as API calls.
     console.log('Form Data:', formData);
-    // Here you can add logic to send the form data to the server
+    
+    // If login is successful, navigate to the home page.
+    navigate('/'); // Navigate to home after successful login
   };
 
   return (
@@ -63,9 +67,9 @@ const Login = () => {
             <Link to="/signup" className="signup-button">Signup</Link>
           </div>
         </div>
-        <div className="form-image">
+        {/* <div className="form-image">
           <img src='Signupp.jpg' alt="Signup" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

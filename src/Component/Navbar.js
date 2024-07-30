@@ -1,20 +1,26 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css';
-import home1 from '../assets/images/home1.jpg';
+import { useState } from 'react';
+import logo from '../assets/images/logo.avif';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import './Navbar.css';
 
 function Navbar() {
-  const navigate = useNavigate();
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleLoginClick = () => {
-    navigate('/login');
+    navigate('/login'); 
+  };
+
+  const handleUserIconClick = () => {
+    setDropdownVisible(!dropdownVisible);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={home1} alt="Turf Logo" />
+        <img src={logo} alt="Turf Logo" />
       </div>
       <div className="title">TurfSplaz</div>
       <div className="navbar-center">
@@ -26,12 +32,19 @@ function Navbar() {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
-      <div className="navbar-icons">
-        <div className="search-bar">
-          <input type="text" placeholder="Search..." />
-          <i className="fas fa-search"></i>
-        </div>
-        <a href="#" onClick={handleLoginClick}><i className="fas fa-user"></i></a>
+      <div className="navbar-search">
+        <input type="text" placeholder="Type here to Search" />
+        <i className="fas fa-search search-icon"></i>
+      </div>
+      <div className="user-icon" onClick={handleUserIconClick}>
+        <i className="fas fa-user"></i>
+        {dropdownVisible && (
+          <div className="dropdown-menu">
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+            <Link to="/admin">My Account</Link>
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -1,13 +1,15 @@
 .contact-page {
   font-family: Arial, sans-serif;
+  margin-top: 50px;
 }
 
 .contact-header {
-  background-color:#448249;
-  color: white;
-  font-size :2rem;;
+  background-color: #448249;
+  
+  color:#ddd;
   text-align: center;
   padding: 2rem;
+  font-size: 2rem;
 }
 
 .contact-container {

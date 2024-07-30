@@ -1,5 +1,7 @@
-import React from 'react';
+// Selfturf.js
+import React, { useState } from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 import './Badsel.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -7,10 +9,17 @@ import "slick-carousel/slick/slick-theme.css";
 import home1 from '../assets/images/home1.jpg'; 
 import home2 from '../assets/images/home2.jpg'; 
 import home3 from '../assets/images/home3.jpg'; 
+import as1 from '../assets/images/as1.jpg'; 
+import as3 from '../assets/images/as3.jpg'; 
+import as2 from '../assets/images/as2.avif'; 
 import selimgc1 from '../assets/images/selimgc1.jpeg';
 import selimgc2 from '../assets/images/selimgc2.jpeg';
 import selimgc3 from '../assets/images/selimgc3.jpeg';
-const Selfturf = () => {
+
+const Badsel = () => {
+  const [filteredTurfs, setFilteredTurfs] = useState([]);
+  const [filterApplied, setFilterApplied] = useState(false);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -20,56 +29,67 @@ const Selfturf = () => {
     autoplay: true,
   };
 
-  const books = [
-    { id: 1, title: <b>'Sprinkles and Skeletons'</b>, author: <b>'Leena Clover'</b>, imgSrc: selimgc1 },
-    { id: 2, title: <b>'Daniel Hudson'</b>, author: <b>'Jesse Storm'</b>, imgSrc: selimgc3 },
-    { id: 3, title: <b>'My Sugar in Sugar Land'</b>, author: <b>'Dee Osah'</b>, imgSrc: selimgc2 },
-    { id: 4, title: <b>'The Moss Dragon of Brittlekeep'</b>, author: <b>'Ashley Capes'</b>, imgSrc: selimgc1 },
-    { id: 5, title: <b>'A Match Made in Hell'</b>, author: <b>'Traci Lovelot'</b>, imgSrc: selimgc3},
-    { id: 6, title: <b>'Vampires and Villains'</b>, author: <b>'Elizabeth Pantley'</b>, imgSrc: selimgc2 },
-    // Add more books as needed
+  const turfs = [
+    { id: 1, name: <b>'Soccer Turf'</b>, location: <b>'Downtown Stadium'</b>, amount: <b>'100/hr'</b>, imgSrc: as1 },
+    { id: 2, name: <b>'Cricket Ground'</b>, location: <b>'City Park'</b>, amount: <b>'80/hr'</b>, imgSrc: as2 },
+    { id: 3, name: <b>'Hockey Field'</b>, location: <b>'Westside Arena'</b>, amount: <b>'90/hr'</b>, imgSrc: as3 },
+    { id: 4, name: <b>'Tennis Court'</b>, location: <b>'East End Club'</b>, amount: <b>'70/hr'</b>, imgSrc: as1 },
+    { id: 5, name: <b>'Basketball Court'</b>, location: <b>'Central Gym'</b>, amount: <b>'85/hr'</b>, imgSrc: as2},
+    { id: 6, name: <b>'Badminton Court'</b>, location: <b>'North Sports Complex'</b>, amount: <b>'75/hr'</b>, imgSrc: as3 },
   ];
 
-  const genres = [
-    { name: 'ROMANCE', imgSrc: home1 },
-    { name: 'ACTION & ADVENTURE', imgSrc: home2 },
-    { name: 'MYSTERY & THRILLER', imgSrc: home3 },
-    { name: 'BIOGRAPHIES & HISTORY', imgSrc: home1 },
-    { name: 'CHILDREN\'S', imgSrc: home2 },
-    { name: 'YOUNG ADULT', imgSrc: home3 },
-    { name: 'FANTASY', imgSrc: home1 },
-    { name: 'HISTORICAL FICTION', imgSrc: home2 },
-    { name: 'HORROR', imgSrc: home3 },
-    { name: 'LITERARY FICTION', imgSrc: home1 },
-    { name: 'NON-FICTION', imgSrc: home2 },
-    { name: 'SCIENCE FICTION', imgSrc: home3 }
+  const categories = [
+    { name: 'INDOOR SPORTS', imgSrc: home1 },
+    { name: 'OUTDOOR SPORTS', imgSrc: home2 },
+    { name: 'ARTIFICIAL TURFS', imgSrc: home3 },
+    { name: 'NATURAL GRASS FIELDS', imgSrc: home1 },
+    { name: 'MULTIPURPOSE COURTS', imgSrc: home2 },
+    { name: 'SPECIAL EVENTS', imgSrc: home3 },
+    { name: 'MULTIPURPOSE COURTS', imgSrc: home2 },
+    { name: 'SPECIAL EVENTS', imgSrc: home3 }
   ];
+
+  const handleFilterByLocation = (location) => {
+    const filtered = turfs.filter(turf => turf.location === location);
+    setFilteredTurfs(filtered);
+    setFilterApplied(true);
+  };
+
+  const handleClearFilter = () => {
+    setFilteredTurfs([]);
+    setFilterApplied(false);
+  };
+
+  const displayTurfs = filterApplied ? filteredTurfs : turfs;
 
   return (
     <div className="home-i">
-      
       <section className="recommended">
-        <h2>Recommended</h2>
+        <h2>Recommended Turfs</h2>
         <Slider {...settings}>
-          {books.map(book => (
-            <div className="book-card-container" key={book.id}>
+          {displayTurfs.map(turf => (
+            <div className="book-card-container" key={turf.id}>
               <div className="book-card">
-                <img src={book.imgSrc} alt={book.title} />
-                <p className="book-title">{book.title}</p>
-                <p className="book-author">{book.author}</p>
-                <button className="go-button">View</button>
+                <img src={turf.imgSrc} alt={turf.name} />
+                <p className="book-title">{turf.name}</p>
+                <p className="book-author" onClick={() => handleFilterByLocation(turf.location)}>{turf.location}</p>
+                <p className="book-amount">{turf.amount}</p>
+                <Link to="/time">
+                  <button className="go-button">View</button>
+                </Link>
               </div>
             </div>
           ))}
         </Slider>
+        {filterApplied && <button onClick={handleClearFilter}>Clear Filter</button>}
       </section>
       <section className="categories">
-        <h2>Browse Genres</h2>
+        <h2>Browse Categories</h2>
         <div className="genre-cards">
-          {genres.map((genre, index) => (
+          {categories.map((category, index) => (
             <div className="genre-card" key={index}>
-              <img src={genre.imgSrc} alt={genre.name} />
-              <div className="genre-name">{genre.name}</div>
+              <img src={category.imgSrc} alt={category.name} />
+              <div className="genre-name">{category.name}</div>
             </div>
           ))}
         </div>
@@ -78,4 +98,4 @@ const Selfturf = () => {
   );
 };
 
-export default Selfturf;
+export default Badsel;

@@ -5,14 +5,27 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 500px;
+.background-containerts {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/images/log1.jpg'); /* Adjust the path as necessary */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center; /* Center the background image */
+}
+
+.containerts {
+    max-width: 600px;
     margin: 50px auto;
+    width: 400px;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(198, 23, 23, 0.1);
     border-radius: 10px;
-    position: relative; /* Added this for the close button positioning */
+    position: relative;
+    margin-top: 150px; /* Added this for the close button positioning */
 }
 
 h2 {
@@ -66,7 +79,7 @@ h3 {
     margin-top: 10px;
 }
 
-.book-now-btn {
+.book-now-btnts {
     width: 100%;
     padding: 10px;
     border: none;
@@ -78,11 +91,11 @@ h3 {
     margin-top: 20px;
 }
 
-.book-now-btn:hover {
+.book-now-btnts:hover {
     background-color: #218838;
 }
 
-.close-btn {
+.close-btnts {
     position: absolute;
     top: 10px;
     right: 10px;

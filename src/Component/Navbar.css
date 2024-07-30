@@ -11,11 +11,12 @@
   top: 0;
 }
 
-.title {
+.navbar .title {
   font-weight: bolder;
   font-size: 1.8rem;
   position: absolute;
-  transform: translateX(45%);
+  left: 10%;
+  transform: translateX(-50%);
   background: linear-gradient(90deg, #ff7a18, #af0069 70%, #2ea3ab);
   background-size: 200% 200%;
   color: transparent;
@@ -41,8 +42,8 @@
 .navbar-links {
   list-style: none;
   display: flex;
-margin-left: 100px;
   padding: 0;
+  margin: 0;
 }
 
 .navbar-links li {
@@ -64,43 +65,68 @@ margin-left: 100px;
   color: #fff;
 }
 
-.navbar-icons {
+.navbar-search {
+  position: relative;
   display: flex;
   align-items: center;
-}
-
-.search-bar {
-  position: relative;
   margin-right: 20px;
+  flex: 1;
+  max-width: 300px;
 }
 
-.search-bar input {
-  padding: 8px 10px 8px 35px;
-  border-radius: 5px;
+.navbar-search input {
+  padding: 8px 18px;
+  border-radius: 3px;
   border: none;
-  outline: none;
-  background-color: white;
-  color: #223447;
-  font-size: 16px;
-  margin-right: 80px;
+  width: 100%;
+  color: black; /* Ensure text appears in black color */
+  z-index: 1;
 }
 
-.search-bar i {
+.navbar-search .search-icon {
   position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #223447;
+  right: 10px;
+  color: #000;
   font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
 }
 
-.navbar-icons a {
+.user-icon {
+  cursor: pointer;
+  font-size: 1.7rem;
+  margin-right: 20px;
   color: white;
-  font-size: 20px;
-  margin-left: 20px;
-  transition: color 0.3s;
+  position: relative;
 }
 
-.navbar-icons a:hover {
-  color: #ddd;
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #4da953;
+  box-shadow: 0 2px 4px rgba(101, 222, 101, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  flex-direction: column;
+  width: 130px;
+}
+
+.user-icon:hover .dropdown-menu,
+.user-icon:focus .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #e84d56;
 }

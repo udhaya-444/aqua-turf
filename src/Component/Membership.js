@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Membership.css';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 
@@ -50,12 +50,12 @@ const memberships = [
       "Exclusive events"
     ],
     unavailable: [],
-    buttonText: "JOIN NOW",
+    buttonText: " JOIN NOW",
     buttonColor: "#e6005c",
   },
 ];
 
-const MembershipCard = ({ title, imageUrl, features, unavailable, buttonText, buttonColor }) => (
+const MembershipCard = ({ title, imageUrl, features, unavailable, buttonText, buttonColor, onJoinNow }) => (
   <div className="card">
     <img src={imageUrl} alt={`${title} membership`} className="card-image" />
     <h3 className="card-title">{title}</h3>
@@ -71,19 +71,25 @@ const MembershipCard = ({ title, imageUrl, features, unavailable, buttonText, bu
         </li>
       ))}
     </ul>
-    <button className="shop-button" style={{ backgroundColor: buttonColor }}>
+    <button className="shop-button" style={{ backgroundColor: buttonColor }} onClick={onJoinNow}>
       {buttonText}
     </button>
   </div>
 );
 
 const Membership = () => {
+  const navigate = useNavigate();
+
+  const handleJoinNow = () => {
+    navigate('/payment');
+  };
+
   return (
     <div className="membership-section">
       <h1 className="membership-header">Membership Details</h1>
       <div className="membership-container">
         {memberships.map((membership, index) => (
-          <MembershipCard key={index} {...membership} />
+          <MembershipCard key={index} {...membership} onJoinNow={handleJoinNow} />
         ))}
       </div>
     </div>

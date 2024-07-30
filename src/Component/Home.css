@@ -54,6 +54,8 @@
   width: 150px;
   transition: background-color 0.3s, color 0.3s;
   border: none; /* Ensure no border */
+  margin-top: 50px;
+  margin-left: 220px;
 }
 
 .get-started-button:hover {

@@ -7,7 +7,7 @@
   overflow: hidden; /* Ensure no overflow */
 }
 
-.linar::before {
+.login-form .linar::before {
   content: '';
   position: absolute;
   top: 0;
@@ -16,7 +16,7 @@
   height: 100%;
   background: url('../assets/images/log1.jpg') no-repeat center center fixed; 
   background-size: cover; /* Ensures the image covers the whole screen */
-  filter: blur(8px); /* Adjust the blur intensity as needed */
+  filter: blur(3px); /* Adjust the blur intensity as needed */
   z-index: -1; /* Ensure the pseudo-element is behind the content */
 }
 
@@ -25,8 +25,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
-  max-width: 500px;
+  width: 30%;
+  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -39,19 +39,6 @@
   width: 60%;
 }
 
-.login-form .form-image {
-  width: 35%;
-  text-align: center;
-}
-
-.login-form .form-image img {
-  width: 230px;
-  margin-left: -50px;
-  height: 50vh;
-  border-radius: 5px;
-  top: 0;
-}
-
 .login-form .error-message {
   color: red;
   font-size: 12px;
@@ -62,6 +49,9 @@
 .login-form h2 {
   text-align: center;
   margin-bottom: 20px;
+  margin-left: 150px;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .login-form form div {
@@ -72,26 +62,30 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  margin-left: -130px;
 }
 
 .login-form input {
-  width: 75%;
-  padding: 8px;
+  width: 160%;
+  padding: 5px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-right: -20px;
+  color: black; 
 }
 
 .login-form button {
-  width: 30%;
-  padding: 10px;
+  width: 40%;
+  padding: 8px;
   border: none;
   border-radius: 4px;
   background-color: #28a745;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  margin-left: 70px;
+  margin-left: 30px;
+  margin-right: -120px;
   transition: background-color 0.3s ease;
 }
 
@@ -100,14 +94,14 @@
 }
 
 .login-form .signup-link {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .login-form .signup-link p {
-  margin-bottom: 80px;
-  margin-right: 5px;
+  margin-bottom: 17px;
   font-size: 14px;
 }
 
@@ -115,7 +109,8 @@
   color: #28a745;
   text-decoration: none;
   font-weight: bold;
-  margin-bottom: 70px;
+  margin-right: -150px;
+  margin-bottom: 17px;
 }
 
 .login-form .signup-link .signup-button:hover {
