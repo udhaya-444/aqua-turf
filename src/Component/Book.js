@@ -3,13 +3,11 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Card from 'react-bootstrap/Card';
 import './Book.css';
 import home1 from '../assets/images/home1.jpg'; 
-import home2 from '../assets/images/home2.jpg'; 
-import home3 from '../assets/images/home3.jpg'; 
 import a1 from '../assets/images/a1.webp'; 
 import b1 from '../assets/images/b1.jpg'; 
 const Book = () => {
   const navigate = useNavigate(); // Initialize useNavigate
-  const categories = [
+  const categories1 = [
     {
       header: 'Turf Booking Options',
       items: [
@@ -27,8 +25,8 @@ const Book = () => {
   };
 
   return (
-    <div className="categories">
-      {categories.map((category, index) => (
+    <div className="categories1">
+      {categories1.map((category, index) => (
         <div key={index} className="category-section turf-booking">
           <h2>{category.header}</h2>
           <div className="cards">

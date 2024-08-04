@@ -49,15 +49,15 @@ const Contact = () => {
           <div className="contact-form">
             <form>
               <div className="form-group">
-                <label>Email</label>
+                {/* <label>Email</label> */}
                 <input type="email" placeholder="Enter a valid email address" />
               </div>
               <div className="form-group">
-                <label>Name</label>
+                {/* <label>Name</label> */}
                 <input type="text" placeholder="Enter your Name" />
               </div>
               <div className="form-group">
-                <label>Message</label>
+                {/* <label>Message</label> */}
                 <textarea placeholder="Enter your message"></textarea>
               </div>
               <button type="submit">SUBMIT</button>

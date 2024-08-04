@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import logo from '../assets/images/logo.avif';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({ onSearch }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const navigate = useNavigate(); 
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate('/login'); 
+    navigate('/login');
   };
 
   const handleUserIconClick = () => {
     setDropdownVisible(!dropdownVisible);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    onSearch(searchQuery);
+    navigate('/selturf');
   };
 
   return (
@@ -32,10 +42,17 @@ function Navbar() {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
-      <div className="navbar-search">
-        <input type="text" placeholder="Type here to Search" />
-        <i className="fas fa-search search-icon"></i>
-      </div>
+      <form className="navbar-search" onSubmit={handleSearchSubmit}>
+        <input
+          type="text"
+          placeholder="Type here to Search"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+        <button type="submit">
+          <i className="fas fa-search search-icon"></i>
+        </button>
+      </form>
       <div className="user-icon" onClick={handleUserIconClick}>
         <i className="fas fa-user"></i>
         {dropdownVisible && (

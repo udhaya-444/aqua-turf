@@ -2,9 +2,14 @@ body
 {
   width:99.5%;
 }
+.book-rating {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ff9900; /* Gold color for rating */
+}
 .home-i {
     padding: 20px;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
   }
   
   .recommended {
@@ -19,7 +24,8 @@ body
     position: relative;
     text-align: center;
     transition: transform 0.3s;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    border: 1px solid rgb(148, 148, 216);
     padding: 20px;
     box-sizing: border-box; /* Ensure padding and border are included in the width */
     width: 200px; /* Fixed width */
@@ -59,26 +65,6 @@ body
     background-color: rgba(242, 120, 193, 0.449);
   }
   
-  .go-button {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    display: inline-block;
-    padding: 10px 0; /* Adjusted padding */
-    background-color: #347134;
-    border-radius: 50px; /* Adjusted for rounded button */
-    width: 100px;
-    text-align: center;
-    height: 30px;
-    line-height: 10px; /* Vertically center the text */
-    transition: background-color 0.3s, color 0.3s;
-    border: none; /* Ensure no border */
-    margin-left: 25px;
-  }
-  
-  .go-button:hover {
-    background-color: #5cb85c; /* Darker green on hover */
-  }
   
   .categories {
     margin-top: 20px;
@@ -88,15 +74,17 @@ body
     display: flex;
     flex-wrap: wrap;
     gap: 30px; /* Increase gap between genre cards */
+    /* width: 30px; */
   }
   
   .genre-card {
     overflow: hidden;
     position: relative;
     width: calc(25% - 30px); /* Adjust width to account for increased gap */
-    border: 2px solid black;
+    border: 1px solid rgb(148, 148, 216);
     height: 150px;
     cursor: pointer;
+
   }
   
   .genre-card img {
@@ -120,4 +108,28 @@ body
     padding: 1px 10px;
     border-radius: 5px;
   }
+  .view-button {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 0;
+    background-color: #347134;
+    border-radius: 50px;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    line-height: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    border: none;
+  }
+  
+  .view-button:hover {
+    background-color: #5cb85c;
+  }
+  .categories
+{
+  background-color: #f0f0f0;
+  margin-top: 80px;
+}
   

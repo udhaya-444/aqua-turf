@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Signup.css';
-// import signupImage from '../assets/images/Signup.jpg'; // Correctly import the image
+import log1 from '../assets/images/log1.jpg';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -39,12 +39,44 @@ const Signup = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log('Form Data:', formData);
-      // Here you can add logic to send the form data to the server
-      navigate('/'); // Navigate to home page after successful registration
+      const newUser = {
+        ...formData,
+        username: formData.email // or any unique identifier
+      };
+
+      // Check if the email is already registered
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const existingUser = users.find(user => user.email === newUser.email);
+
+      if (existingUser) {
+        setErrors({ ...errors, api: 'Email is already registered' });
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:8080/users/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newUser),
+        });
+  
+        if (response.ok) {
+          // Store user data in localStorage
+          users.push(newUser);
+          localStorage.setItem('users', JSON.stringify(users));
+          navigate('/'); // Navigate to home page after successful registration
+        } else {
+          const errorText = await response.text();
+          setErrors({ ...errors, api: errorText });
+        }
+      } catch (error) {
+        setErrors({ ...errors, api: 'An error occurred. Please try again later.' });
+      }
     }
   };
 
@@ -55,7 +87,7 @@ const Signup = () => {
           <h2>Signup</h2>
           <form onSubmit={handleSubmit}>
             <div>
-              <label>First Name:</label>
+              <label>UserName:</label>
               <input
                 type="text"
                 name="firstName"
@@ -97,6 +129,7 @@ const Signup = () => {
               />
               {errors.mobileNumber && <span className="error">{errors.mobileNumber}</span>}
             </div>
+            {errors.api && <p className="error-message">{errors.api}</p>}
             <button type="submit">Register</button>
           </form>
           <div className="login-link">
@@ -105,7 +138,7 @@ const Signup = () => {
           </div>
         </div>
         {/* <div className="form-image">
-          <img src={signupImage} alt="Signup" /> 
+          <img src={log1} alt="Signup" /> 
         </div> */}
       </div>
     </div>

@@ -26,11 +26,15 @@ const Login = () => {
       return;
     }
     
-    // Here, you can add your logic for authentication, such as API calls.
-    console.log('Form Data:', formData);
-    
-    // If login is successful, navigate to the home page.
-    navigate('/'); // Navigate to home after successful login
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(user => user.email === formData.username && user.password === formData.password);
+
+    if (user) {
+      // If login is successful, navigate to the home page.
+      navigate('/'); // Navigate to home after successful login
+    } else {
+      setError('Invalid email or password');
+    }
   };
 
   return (
@@ -42,7 +46,7 @@ const Login = () => {
             <div>
               <label>Username:</label>
               <input
-                type="text"
+                type="email"
                 name="username"
                 value={formData.username}
                 onChange={handleChange}
@@ -67,9 +71,6 @@ const Login = () => {
             <Link to="/signup" className="signup-button">Signup</Link>
           </div>
         </div>
-        {/* <div className="form-image">
-          <img src='Signupp.jpg' alt="Signup" />
-        </div> */}
       </div>
     </div>
   );

@@ -1,25 +1,25 @@
-.categories {
+.categories1 {
   padding: 20px;
-  background-color: #ddd;
+  /* background-color: #ddd; */
 }
 
 .category-section {
-  margin-bottom: 55px;
+  margin-bottom: 55px;  
   margin-top: 25px;
 }
-
 .category-section h2 {
-  color: rgb(0, 0, 0);
-  font-size: 2rem;
+  color: #333333;
   text-align: center;
-  padding: 2rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: 40px;
 }
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 30px; /* Adds space between cards */
   margin-left: 70px;
+  margin-bottom: -90px;
 }
 
 .category-card {
@@ -30,7 +30,7 @@
   margin-top: 70px;
   flex-direction: column;
   height: 50vh;
-  margin-right: 100px;
+  margin-right: 110px;
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center content vertically */
 }

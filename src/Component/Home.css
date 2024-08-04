@@ -4,6 +4,7 @@
   display: flex;
   height: 100vh;
   flex-direction: row-reverse; /* This switches the order of the items */
+  background-color: white;
 }
 
 .carousel-container {

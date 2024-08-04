@@ -16,6 +16,7 @@ import OrderPage from './Component/OrderPage';
 import './App.css';
 import PaymentPage from './Component/PaymentPage';
 import Admin from './Component/Admin';
+import RedeemCoin from './Component/Redeem';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,7 +24,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar setSearchQuery={setSearchQuery} />
+        <Navbar onSearch={setSearchQuery} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -38,8 +39,9 @@ function App() {
           <Route path="/aquasel" element={<Aquasel />} />
           <Route path="/badsel" element={<Badsel />} />
           <Route path="/time" element={<TimeSlotSelector />} />
-          <Route path="/admin" element={< Admin/>} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
+        {/* <RedeemCoin/> */}
       </div>
     </Router>
   );
