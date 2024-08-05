@@ -1,7 +1,7 @@
 .order-page {
-  position: relative; 
-  padding: 20px; 
-  min-height: 100vh; /* Ensure it covers the viewport height */
+  position: relative; /* Required for ::before positioning */
+  padding: 20px; /* Add some padding to avoid content touching the edges */
+  text-align: left;
 }
 
 .order-page::before {
@@ -11,12 +11,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../assets/images/log1.jpg');
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center;
-  filter: blur(4px); 
-  z-index: -1; 
+  background-image: url('../assets/images/log1.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-position: center; /* Center the background image */
+  filter: blur(4px); /* Adjust the blur value as needed */
+  z-index: -1; /* Ensure the blurred image stays behind the content */
 }
 
 .payment-page {
@@ -27,24 +27,28 @@
   padding: 20px;
   border: 1px solid #dcc2c2;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.9); /* Light background with some transparency */
+  background-color: #d8d8d8;
   margin-top: 80px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
 }
 
 .payment-page .close-button {
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 30px;
   cursor: pointer;
   font-size: 30px;
-  color: #333; 
+  color: #010101; 
 }
 
 .payment-page h2 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 620;
+}
+
+.payment-page .description {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .payment-page form {
@@ -56,53 +60,99 @@
   margin-bottom: 20px;
 }
 
-.payment-page .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.payment-page .name-input,
-.payment-page .address-input {
+.payment-page .name-input, .address-input {
   display: flex;
   gap: 10px;
 }
 
-.payment-page .name-input input,
-.payment-page .address-input input {
+.payment-page .name-input input, .address-input input {
   flex: 1;
 }
-
-.payment-page input[type="text"],
-.payment-page input[type="email"] {
+[type="text"], input[type="email"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
-.payment-page .payment-method {
-  margin-top: 10px; 
-  margin-bottom: 10px; 
+.payment-page ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; 
+  margin-left: 100px;
+}
+
+.payment-page li {
+  position: relative;
   display: flex;
-  align-items: center; 
+  align-items: center;
+  padding: 10px 5px;
+  margin-right: 150px;
 }
 
-.payment-page .payment-method input[type="radio"] {
-  margin-right: 10px; 
+li input[type="checkbox"] {
+  position: absolute;
+  margin-left: -270px;
 }
 
-.payment-page .button {
-  padding: 10px 20px;
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding-left: 30px;
+  margin-left: -80px;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-description {
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.product-price {
+  margin-top: 5px;
+}
+
+.order-page button {
+  background-color: #28a745;
+  padding: 10px 20px; 
   border: none;
   border-radius: 5px;
-  background-color: #218838;
-  color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 150px; 
+  text-align: center;
+  margin: 0 auto;
+  display: block; 
+  transition: background-color 0.3s ease; 
+}
+.order-page button:hover {
+  background-color: #218838;
 }
 
-.payment-page .button:hover {
-  background-color: #175a26;
+.payment-methods {
+  margin-top: 0px; /* Adjust the top margin to move the radio buttons down */
+  margin-bottom: 10px; /* Add bottom margin for spacing */
+  display: flex;
+  align-items: center;
 }
+
+.payment-method input[type="radio"] {
+  margin-right:-550px; 
+}
+
+.payment-methods .text{
+  margin-top: -25px;
+  margin-left: 20px;
+}
+
+.order-summary p{
+  margin-top: -30px;
+}
+

@@ -8,11 +8,11 @@ import home3 from '../assets/images/home3.jpg';
 import as1 from '../assets/images/as1.jpg'; 
 import as2 from '../assets/images/as2.avif';
 import as3 from '../assets/images/as3.jpg';
-
+import { useNavigate } from 'react-router-dom';
 const Badsel = ({ searchQuery }) => {
   const [filteredTurfs, setFilteredTurfs] = useState([]);
   const [filterApplied, setFilterApplied] = useState(false);
-
+  const navigate = useNavigate();
   const turfs = [
     { id: 1, name: 'A2B Turf', location: 'Gandhipuram', amount: '₹1000/hr', rating: 4.5, imgSrc: as1 },
     { id: 2, name: 'Arena 18 Turf', location: 'Townhall', amount: '₹80/hr', rating: 3.0, imgSrc: as2 },
@@ -51,6 +51,9 @@ const Badsel = ({ searchQuery }) => {
     setFilteredTurfs([]);
     setFilterApplied(false);
   };
+  const handleViewClick = (turf) => {
+    navigate('/time', { state: { amount: turf.amount } });
+  };
 
   const displayTurfs = filterApplied ? filteredTurfs : turfs;
 
@@ -76,9 +79,9 @@ const Badsel = ({ searchQuery }) => {
                   />
                 </div>
                 <p className="book-amount1">{turf.amount}</p>
-                <Link to="/time">
-                  <button className="go-button1">View</button>
-                </Link>
+                
+                  <button className="go-button1" onClick={() => handleViewClick(turf)}>View</button>
+              
               </div>
             </div>
           ))}

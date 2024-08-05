@@ -4,11 +4,11 @@
 }
 
 .category-section {
-  margin-bottom: 55px;  
-  margin-top: 25px;
+  margin-bottom: 10%;  
+  /* margin-top: 25px; */
 }
 .category-section h2 {
-  color: #333333;
+  color: green;
   text-align: center;
   margin-bottom: 20px;
   font-weight: 800;
@@ -24,8 +24,8 @@
 
 .category-card {
   width: 20rem;
-  background-color: #ece6e6;
-  border: 1px solid rgb(148, 148, 216);
+  /* background-color: #ece6e6; */
+  border: 1px solid #65B741;
   display: flex;
   margin-top: 70px;
   flex-direction: column;
@@ -48,11 +48,12 @@
   align-items: center; /* Center text horizontally */
   justify-content: center; /* Center text vertically */
   text-align: center; /* Center text horizontally */
-  background-color: rgb(204, 204, 159);
+  background-color: rgb(122, 245, 118);
+  padding: 10px 20px;
 }
 
 .category-card-title {
-  margin-top: 15px;
+  margin-top: 2px;
 }
 
 .category-card-text {

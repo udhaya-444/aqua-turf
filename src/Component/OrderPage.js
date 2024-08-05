@@ -1,44 +1,32 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './OrderPage.css';
 
-const products = [
-  { name: 'Cap', description: 'This product is made from at least 50% recycled polyester fiber.', price: 5.00 },
-  { name: 'Linen Shoes', description: 'You will wear it again and again, this shoe is remarkable and loyal.', price: 7.00 },
-  { name: 'Hoodie', description: 'Durably stitched surfaces, clean finishes and shine to make you dazzle.', price: 9.00 }
-];
-
-const Orderpage = () => {
-  const [selectedProducts, setSelectedProducts] = useState([]);
+const OrderPage = () => {
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [showForm, setShowForm] = useState(true);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleProductChange = (product, checked) => {
-    if (checked) {
-      setSelectedProducts([...selectedProducts, product]);
-    } else {
-      setSelectedProducts(selectedProducts.filter(p => p.name !== product.name));
-    }
-  };
-
-  const calculateTotal = () => {
-    return selectedProducts.reduce((total, product) => total + product.price, 100).toFixed(2);
-  };
+  // Retrieve totalPrice and amount from location state
+  const totalPrice = location.state?.totalPrice || 0;
+  const amount = location.state?.amount || totalPrice;
 
   const handleClose = () => {
     setShowForm(false);
+    navigate('/time');
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.success('Submitted successful!', {
-      onClose: () => {
-        navigate('/payment');
-      }
-    });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (paymentMethod === 'card') {
+      // Redirect to Payment page for online payment
+      navigate('/payment');
+    } else if (paymentMethod === 'cash-on-delivery') {
+      // Show notification for cash on delivery
+      alert('Order successful! Your order will be delivered soon.');
+    }
   };
 
   if (!showForm) {
@@ -49,14 +37,11 @@ const Orderpage = () => {
     <div className="order-page">
       <div className="payment-page">
         <div className="close-button" onClick={handleClose}>×</div>
-        <h2>Booking Slot</h2>
+        <h2>Purchase Order</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Your Name</label>
-            <div className="name-input">
-              <input type="text" placeholder="First Name" required />
-              <input type="text" placeholder="Last Name" />
-            </div>
+            <input type="text" placeholder="Your Name" required />
           </div>
           <div className="form-group">
             <label>Your E-mail</label>
@@ -67,57 +52,32 @@ const Orderpage = () => {
             <input type="text" placeholder="Your Mobile Number" required />
           </div>
           <div className="form-group">
-            {/* <label>Shipping Address</label> */}
+            <label>Shipping Address</label>
             <input type="text" placeholder="Street Address" required />
-            <input type="text" placeholder="Street Address Line 2" />
             <div className="address-input">
               <input type="text" placeholder="City" />
               <input type="text" placeholder="State / Province" required />
-              <input type="text" placeholder="Postal / Zip Code" required />
+              <input type="text" placeholder="ZIP Code" required />
             </div>
           </div>
           <div className="form-group">
-            <label>Total: {calculateTotal()}</label>
-          </div>
-          <div className="form-group">
-            <label>Payment Methods</label>
-            <div className="payment-method">
-              <input
-                type="radio"
-                name="payment-method"
-                value="card"
-                checked={paymentMethod === 'card'}
-                onChange={() => setPaymentMethod('card')}
-              />
-              <label>Debit or Credit Card</label>
-            </div>
-            <div className="payment-method">
-              <input
-                type="radio"
-                name="payment-method"
-                value="upi"
-                checked={paymentMethod === 'upi'}
-                onChange={() => setPaymentMethod('upi')}
-              />
-              <label>UPI payment</label>
-            </div>
-            <div className="payment-method">
-              <input
-                type="radio"
-                name="payment-method"
-                value="cash-on-delivery"
-                checked={paymentMethod === 'cash-on-delivery'}
-                onChange={() => setPaymentMethod('cash-on-delivery')}
-              />
-              <label>Cash on Delivery</label>
+            <label>Payment Method</label>
+            <div className="payment-methods">
+              <div>
+                <input type="radio" id="card" name="payment-method" value="card" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} />
+                <label htmlFor="card" className="text">Online Payment</label>
+              </div>
+             
             </div>
           </div>
-          <button type="submit" className="button">Submit</button>
+          <div className="order-summary">
+            <p>Total Price: {amount}</p>
+          </div>
+          <button type="submit" className="submit-btn">Place Booking</button>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 };
 
-export default Orderpage;
+export default OrderPage;

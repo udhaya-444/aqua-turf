@@ -5,7 +5,7 @@ import StarRatings from 'react-star-ratings';
 import './Selturf.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
+import { useNavigate, useLocation } from 'react-router-dom';
 import home1 from '../assets/images/home1.jpg'; 
 import home2 from '../assets/images/home2.jpg'; 
 import home3 from '../assets/images/home3.jpg'; 
@@ -16,6 +16,7 @@ import as4 from '../assets/images/as4.jpg';
 const Selturf = ({ searchQuery }) => {
   const [filteredTurfs, setFilteredTurfs] = useState([]);
   const [filterApplied, setFilterApplied] = useState(false);
+  const navigate = useNavigate(); 
 
   const settings = {
     dots: true,
@@ -60,6 +61,9 @@ const Selturf = ({ searchQuery }) => {
     { name: 'MULTIPURPOSE COURTS', imgSrc: home2 },
     { name: 'SPECIAL EVENTS', imgSrc: home3 }
   ];
+  const handleViewClick = (turf) => {
+    navigate('/time', { state: { amount: turf.amount } });
+  };
 
   useEffect(() => {
     if (searchQuery) {
@@ -101,9 +105,7 @@ const Selturf = ({ searchQuery }) => {
                   />
                 </div>
                 <p className="book-amount">{turf.amount}</p>
-                <Link to="/time">
-                  <button className="go-button">View</button>
-                </Link>
+                <button className="go-button" onClick={() => handleViewClick(turf)}>View</button>
               </div>
             </div>
           ))}

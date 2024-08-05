@@ -4,9 +4,9 @@
 }
 
 .contact-header {
-  background-color: #448249;
+  background-color: #65B741;
   
-  color:#ddd;
+  color:#fff;
   text-align: center;
   padding: 2rem;
   font-size: 2rem;
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ecf0f1;
+  /* background-color: #ecf0f1; */
 }
 
 .contact-cards {
@@ -24,7 +24,7 @@
   justify-content: space-around;
   width: 100%;
   max-width: 1200px;
-  margin-top: -120px;
+  margin-top: -100px;
   padding: 5rem;
   border-radius: 8px;
 }
@@ -32,7 +32,7 @@
 .contact-card {
   background-color: white;
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(122, 245, 118);
   border-radius: 8px;
   text-align: center;
   flex: 1;
@@ -41,12 +41,12 @@
 
 .contact-card i {
   font-size: 2rem;
-  color: #448249;
+  color: #65B741;
   margin-bottom: 0.5rem;
 }
 
 .contact-card h3 {
-  color:#448249;
+  color:#65B741;
   margin-bottom: 0.5rem;
 }
 
@@ -59,7 +59,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(122, 245, 118);
   border-radius: 8px;
   max-width: 1200px;
   width: 100%;
@@ -73,7 +73,7 @@
 }
 
 .contact-info h2 {
-  color: #448249;
+  color: #65B741;
   margin-bottom: 1rem;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .contact-info p {
-  color: #448249;
+  color: #65B741;
 }
 
 .social-icons {
@@ -94,17 +94,17 @@
 .social-icons i {
   margin: 0 0.5rem;
   font-size: 1.5rem;
-  color: #448249;
+  color: #65B741;
   cursor: pointer;
 }
 
 .social-icons i:hover {
-  color: #448249;
+  color: #65B741;
 }
 
 .contact-form {
   flex: 1;
-  max-width: 50%;
+  max-width: 40%;
   margin-right: 2rem;
 }
 
@@ -116,22 +116,22 @@
 
 .contact-form label {
   margin-bottom: 0.5rem;
-  color: #34495e;
+  /* color: #34495e; */
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.5rem;
+  padding: 10px;
   border: none;
   border-bottom: 1px solid #bdc3c7;
-  background-color: #ecf0f1; /* Set the background color of the inputs and textareas to match the container */
+  /* background-color: #ecf0f1; */
   border-radius: 0;
   outline: none;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-bottom-color: #448249;
+  border-bottom-color: #65B741;
 }
 
 .contact-form textarea {
@@ -140,7 +140,7 @@
 }
 
 .contact-form button {
-  background-color: #448249;
+  background-color: #65B741;
 
   color: white;
   padding: 0.75rem 1.5rem;
@@ -153,5 +153,5 @@
 }
 
 .contact-form button:hover {
-  background-color: #347134;
+  background-color: #5cb85c;
 }

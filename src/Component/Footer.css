@@ -1,7 +1,8 @@
 .footer {
-  background-color: #448249;
+  background-color: #65B741;
   color: white;
   padding: 20px 0;
+  text-align: left;
 }
 
 .footer-content {
@@ -22,7 +23,7 @@
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: bold;
-  color: white; /* Ensures the heading text is white */
+  color: snow;
 }
 
 .footer-section ul {
@@ -58,7 +59,7 @@
 }
 
 .social-icons a:hover {
-  color: #e84d56;
+  color: #65B741;
 }
 
 .newsletter p {
@@ -89,14 +90,14 @@
 .newsletter button {
   padding: 10px 5px;
   border: none;
-  background-color: #e84d56;
+  background-color: green;
   color: white; /* Ensures button text is white */
   cursor: pointer;
   border-radius: 0 3px 3px 0;
 }
 
 .newsletter button:hover {
-  background-color: #d43b48;
+  background-color: rgb(3, 163, 3);
 }
 
 /* Ensure text color for the contact info section */

@@ -50,7 +50,7 @@ const Contact = () => {
             <form>
               <div className="form-group">
                 {/* <label>Email</label> */}
-                <input type="email" placeholder="Enter a valid email address" />
+                <input type="text" placeholder="Enter a valid email address" />
               </div>
               <div className="form-group">
                 {/* <label>Name</label> */}

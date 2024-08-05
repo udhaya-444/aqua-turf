@@ -1,16 +1,15 @@
 import React from 'react';
 import './About.css'; // Import the CSS for styling
 import selimgc1 from '../assets/images/selimgc1.jpeg';
-import selimgc3 from '../assets/images/selimgc3.jpeg';
 import selimgc2 from '../assets/images/selimgc2.jpeg';
-
+import selimgc3 from '../assets/images/selimgc3.jpeg';
+import selimgc4 from '../assets/images/selimgc4.jpeg';
 
 const About = () => {
   return (
     <div className="about-section">
       <div className="about-text">
-        {/* <h3 className="about-title">About Us</h3> */}
-        <h1 className="welcome-text">Welcome to TurfSplaz</h1>
+        <h1 className="welcome-text">ABOUT US</h1>
         <p className="about-content">
           Welcome to TurfSplaz, your ultimate destination for booking turf facilities.
           At TurfSplaz, we believe in providing top-notch facilities and a seamless booking experience.
@@ -40,8 +39,8 @@ const About = () => {
       <div className="image-section">
         <img src={selimgc1} alt="Turf 1" className="supermarket-image image-1" />
         <img src={selimgc2} alt="Turf 2" className="supermarket-image image-2" />
-        <img src={selimgc2} alt="Turf 3" className="supermarket-image image-3" />
-        <img src={selimgc3} alt="Turf 4" className="supermarket-image image-4" />
+        <img src={selimgc3} alt="Turf 3" className="supermarket-image image-3" />
+        <img src={selimgc4} alt="Turf 4" className="supermarket-image image-4" />
       </div>
     </div>
   );

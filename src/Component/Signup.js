@@ -81,7 +81,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="linb">
+    <div className="signup-container">
       <div className="signup-form">
         <div className="form-content">
           <h2>Signup</h2>
@@ -106,6 +106,7 @@ const Signup = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.api && <p className="error-message">{errors.api}</p>}
             </div>
             <div>
               <label>Password:</label>
@@ -129,16 +130,16 @@ const Signup = () => {
               />
               {errors.mobileNumber && <span className="error">{errors.mobileNumber}</span>}
             </div>
-            {errors.api && <p className="error-message">{errors.api}</p>}
             <button type="submit">Register</button>
           </form>
           <div className="login-link">
-            <p>Already registered? </p>
+            <p>Already registered?</p>
             <Link to="/login">Login</Link>
           </div>
         </div>
-        {/* <div className="form-image">
-          <img src={log1} alt="Signup" /> 
+        {/* Optional image
+        <div className="form-image">
+          <img src={log1} alt="Signup" />
         </div> */}
       </div>
     </div>

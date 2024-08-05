@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 2rem;
-    background-color: #f0f0f0;
-    margin-top: 60px;
+    margin-bottom: 20px;
+    background-color: #65B741;
 }
   
 .about-text {
@@ -15,7 +15,7 @@
     color: #333;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 2.5rem;
+    margin-bottom: 20%;
 }
   
 .welcome-text {
@@ -24,7 +24,7 @@
 }
   
 .about-content {
-    color: #666;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
     align-items: center;
@@ -42,10 +42,10 @@
     text-align: center;
     flex: 1;
     margin: 0 1rem;
-    background-color: rgb(207, 232, 254);
+    background-color: #fff;
     padding: 0.8rem 1rem;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.383);
     width: 100%;
 }
   

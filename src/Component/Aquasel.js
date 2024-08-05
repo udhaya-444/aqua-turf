@@ -12,7 +12,9 @@ import selimgc1 from '../assets/images/selimgc1.jpeg';
 import selimgc2 from '../assets/images/selimgc2.jpeg';
 import selimgc3 from '../assets/images/selimgc3.jpeg';
 import StarRatings from 'react-star-ratings';
+import { useNavigate } from 'react-router-dom';
 const Aquasel = () => {
+  const navigate = useNavigate();
   const settings = {
     dots: true,
     infinite: true,
@@ -45,6 +47,9 @@ const Aquasel = () => {
     { name: 'NON-FICTION', imgSrc: home2 },
     { name: 'SCIENCE FICTION', imgSrc: home3 }
   ];
+  const handleViewClick = (book) => {
+    navigate('/time', { state: { amount: book.amount } });
+  };
 
   return (
     <div className="home-i">
@@ -57,7 +62,6 @@ const Aquasel = () => {
                 <img src={book.imgSrc} alt={book.title} />
                 <p className="book-title">{book.title}</p>
                 <p className="book-author">{book.author}</p>
-                <p className="book-amount">{book.amount}</p>
                 <div className="book-rating">
                 <StarRatings
                     rating={book.rating}
@@ -68,9 +72,9 @@ const Aquasel = () => {
                     name='rating'
                   />
                 </div>
-                <Link to={'/time'}>
-                  <button className="view-button">View</button>
-                </Link>
+                <p className="book-amount">{book.amount}</p>
+                  <button className="view-button" onClick={() => handleViewClick(book)}>View</button>
+                
               </div>
             </div>
           ))}

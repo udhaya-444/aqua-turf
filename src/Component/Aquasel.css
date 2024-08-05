@@ -122,6 +122,7 @@ body
     line-height: 10px;
     transition: background-color 0.3s, color 0.3s;
     border: none;
+    margin-left: 28px;
   }
   
   .view-button:hover {

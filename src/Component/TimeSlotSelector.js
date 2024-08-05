@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './TrufBookingSystem.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const TimeSlotSelector = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -10,6 +10,7 @@ const TimeSlotSelector = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [bookingMessage, setBookingMessage] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
 
   const timeSlots = [
     '09:00 AM - 10:00 AM',
@@ -33,7 +34,7 @@ const TimeSlotSelector = () => {
   const handleSubmit = () => {
     if (selectedDate && selectedTimeSlot) {
       setBookingMessage(`Booking confirmed for ${selectedDate.toDateString()} at ${selectedTimeSlot}`);
-      navigate('/order');
+      navigate('/order', { state: { amount: location.state?.amount } });
     } else {
       setBookingMessage('Please select both a date and a time slot.');
     }
@@ -41,6 +42,7 @@ const TimeSlotSelector = () => {
 
   const handleClose = () => {
     setIsVisible(false);
+    navigate('/selturf');
   };
 
   if (!isVisible) return null;

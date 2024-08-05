@@ -3,7 +3,7 @@
 .home-container {
   display: flex;
   height: 100vh;
-  flex-direction: row-reverse; /* This switches the order of the items */
+  flex-direction: row;
   background-color: white;
 }
 
@@ -11,7 +11,6 @@
   flex: 1;
   position: relative;
   overflow: hidden;
-
 }
 
 .home-image {
@@ -21,7 +20,6 @@
   transition: opacity 1s ease-in-out;
   margin-top: 150px;
   margin-left: 60px; 
-  margin-bottom: 300px;
 }
 
 .content-container {
@@ -37,6 +35,7 @@
 
 .content-container h1 {
   margin-bottom: 20px;
+  color: #65B741;
 }
 
 .content-container p {
@@ -50,7 +49,7 @@
   font-size: 18px;
   display: inline-block;
   padding: 10px 20px; /* Adjusted padding */
-  background-color: #347134;
+  background-color: #65B741;
   border-radius: 50px; /* Adjusted for rounded button */
   width: 150px;
   transition: background-color 0.3s, color 0.3s;
@@ -60,5 +59,5 @@
 }
 
 .get-started-button:hover {
-  background-color: #5cb85c; /* Adjusted hover background color */
+  background-color: #5cb85c; 
 }

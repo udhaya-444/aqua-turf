@@ -17,6 +17,7 @@ import './App.css';
 import PaymentPage from './Component/PaymentPage';
 import Admin from './Component/Admin';
 import RedeemCoin from './Component/Redeem';
+import AddUser from './Component/AddUser';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -40,6 +41,8 @@ function App() {
           <Route path="/badsel" element={<Badsel />} />
           <Route path="/time" element={<TimeSlotSelector />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/add-user" element={<AddUser />} />
+          
         </Routes>
         {/* <RedeemCoin/> */}
       </div>
