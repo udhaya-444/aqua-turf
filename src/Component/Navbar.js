@@ -36,13 +36,14 @@ function Navbar({ onSearch }) {
       <div className="navbar-center">
         <ul className="navbar-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/categories">Booking</Link></li>
-          <li><Link to="/membership">Membership</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><a href="#aboutid">About</a></li>
+          <li><a href="#booki">Book</a></li>
+          <li><a href="#mem">Membership</a></li>
+          <li><a href="#con">Contact</a></li>
+        
         </ul>
       </div>
-      <form className="navbar-search" onSubmit={handleSearchSubmit}>
+      {/* <form className="navbar-search" onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="Type here to Search"
@@ -52,7 +53,7 @@ function Navbar({ onSearch }) {
         <button type="submit">
           <i className="fas fa-search search-icon"></i>
         </button>
-      </form>
+      </form> */}
       <div className="user-icon" onClick={handleUserIconClick}>
         <i className="fas fa-user"></i>
         {dropdownVisible && (

@@ -56,7 +56,8 @@ const memberships = [
 ];
 
 const MembershipCard = ({ title, imageUrl, features, unavailable, buttonText, buttonColor, onJoinNow }) => (
-  <div className="card">
+  
+  <div className="card2">
     <img src={imageUrl} alt={`${title} membership`} className="card-image" />
     <h3 className="card-title">{title}</h3>
     <ul className="features-list">
@@ -85,6 +86,7 @@ const Membership = () => {
   };
 
   return (
+    <div id="mem">
     <div className="membership-section">
       <h1 className="membership-header">Membership Details</h1>
       <div className="membership-container">
@@ -92,6 +94,7 @@ const Membership = () => {
           <MembershipCard key={index} {...membership} onJoinNow={handleJoinNow} />
         ))}
       </div>
+    </div>
     </div>
   );
 };

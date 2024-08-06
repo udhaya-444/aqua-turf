@@ -7,6 +7,7 @@ import selimgc4 from '../assets/images/selimgc4.jpeg';
 
 const About = () => {
   return (
+    <div id="aboutid">
     <div className="about-section">
       <div className="about-text">
         <h1 className="welcome-text">ABOUT US</h1>
@@ -21,17 +22,17 @@ const About = () => {
         <div className="stats-box">
           <div className="stat-item">
             <img src={selimgc1} alt="Choose Turf" className="stat-icon" />
-            <p className="stat-title">Choose Turf</p>
+            <h3 className="stat-title">Choose Turf</h3>
             <p>Select from a variety of turfs tailored to your needs.</p>
           </div>
           <div className="stat-item">
             <img src={selimgc2} alt="Make Payment" className="stat-icon" />
-            <p className="stat-title">Make Payment</p>
+            <h3 className="stat-title">Make Payment</h3>
             <p>Experience a seamless and secure payment process.</p>
           </div>
           <div className="stat-item">
             <img src={selimgc3} alt="Enjoy Your Game" className="stat-icon" />
-            <p className="stat-title">Enjoy Your Game</p>
+            <h3 className="stat-title">Enjoy Your Game</h3>
             <p>Enjoy your game on our top-quality turfs.</p>
           </div>
         </div>
@@ -42,6 +43,7 @@ const About = () => {
         <img src={selimgc3} alt="Turf 3" className="supermarket-image image-3" />
         <img src={selimgc4} alt="Turf 4" className="supermarket-image image-4" />
       </div>
+    </div>
     </div>
   );
 };

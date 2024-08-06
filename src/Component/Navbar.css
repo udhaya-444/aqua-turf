@@ -3,11 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  /* background-color: #cccccc7b; */
-  /* color: white; */
-  z-index: 1000;
-  /* position: fixed; */
-  width: 100%;
   top: 0;
 }
 
@@ -58,7 +53,7 @@
   padding: 0 20px;
   /* border-radius: 5px; */
   transition: background-color 0.3s, color 0.3s;
-  font-family:monospace;
+  /* font-family:monospace; */
   font-weight: bold;
 }
 .navbar-search input {

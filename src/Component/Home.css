@@ -36,6 +36,7 @@
 .content-container h1 {
   margin-bottom: 20px;
   color: #65B741;
+  font-size: 40px;
 }
 
 .content-container p {
@@ -60,4 +61,5 @@
 
 .get-started-button:hover {
   background-color: #5cb85c; 
+  cursor: pointer;
 }

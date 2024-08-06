@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
+import Navbar from './Navbar.js'
 import Video from './Video.jsx'
 import home1 from '../assets/images/home1.jpg'; 
 import home2 from '../assets/images/home2.jpg'; 
@@ -10,7 +11,7 @@ import col2 from '../assets/images/col2.jpg';
 import About from './About';
 import Membership from './Membership';
 import Book from './Book';
-import Selfturf from './Selturf';
+import Selturf from './Selturf';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -29,11 +30,12 @@ function Home() {
   }, []);
 
   const handleGetStartedClick = () => {
-    navigate('/selturf'); // Adjust the path as needed
+    navigate('/login'); // Adjust the path as needed
   };
 
   return (
     <div>
+      <Navbar /> 
       <Video />
     <div className="home-container">
       <div className="carousel-container">
@@ -51,7 +53,6 @@ function Home() {
       </div>
       <About/>
     <Book/>
-  
     <Membership/>
     <Contact/>
     <Footer/>

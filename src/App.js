@@ -16,35 +16,34 @@ import OrderPage from './Component/OrderPage';
 import './App.css';
 import PaymentPage from './Component/PaymentPage';
 import Admin from './Component/Admin';
-import RedeemCoin from './Component/Redeem';
+
 import AddUser from './Component/AddUser';
 
+
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <Router>
       <div className="App">
-        <Navbar onSearch={setSearchQuery} />
+        {/* <Navbar onSearch={setSearchQuery} /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/categories" element={<Book />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/book" element={<Book />} />
+          {/* <Route path="/membership" element={<Membership />} /> */}
+          {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/order" element={<OrderPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/selturf" element={<Selturf searchQuery={searchQuery} />} />
+          <Route path="/selturf" element={<Selturf />} />
           <Route path="/aquasel" element={<Aquasel />} />
           <Route path="/badsel" element={<Badsel />} />
           <Route path="/time" element={<TimeSlotSelector />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/add-user" element={<AddUser />} />
-          
         </Routes>
-        {/* <RedeemCoin/> */}
+          
       </div>
     </Router>
   );

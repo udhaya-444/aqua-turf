@@ -52,7 +52,7 @@ const OrderPage = () => {
             <input type="text" placeholder="Your Mobile Number" required />
           </div>
           <div className="form-group">
-            <label>Shipping Address</label>
+            <label>Details</label>
             <input type="text" placeholder="Street Address" required />
             <div className="address-input">
               <input type="text" placeholder="City" />

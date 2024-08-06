@@ -1,84 +1,77 @@
-.home-i {
-  padding: 20px;
-  /* background-color: #f0f0f0; */
-  margin-top: 60px;
-}
-
-.recommended h2 {
-  font-size: 40px;
-}
-
-.recommended {
-  margin-bottom: 40px;
-}
-
-.book-card-container {
+.book-cards1 {
   display: flex;
-  justify-content: center;
-  padding: 0 10px; /* Adjust spacing between cards */
+  flex-wrap: wrap;
+  gap: 35px; /* Adjust spacing between cards */
+  justify-content: center; 
 }
 
-.book-card {
-  border: 1px solid rgb(148, 148, 216);
-  margin-top: 20px;
-  position: relative;
+.book-card-container1 {
+  flex: 1 1 250px; /* Adjust the size of each card */
+  max-width: 250px; /* Ensure cards don’t exceed a certain width */
+}
+
+.book-card1 {
+  margin: 0; /* Remove margin around the card */
   text-align: center;
   transition: transform 0.3s;
-  /* border: 2px solid black; */
+  border: 2px solid #5cb85c;
   padding: 20px;
-  
-  width: 200px;
-  height: 320px; 
+  box-sizing: border-box;
+  width: 100%; /* Make the card take up full width of its container */
+  height: 400px; /* Increase height for larger cards */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.book-card img {
-  width: 110%;
-  height: 100px; 
-  transition: transform 0.3s;
+.book-card1 img {
+  width: 100%;
+  height: 220px; /* Increase height for images */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  object-position: 0%;
   margin-bottom: 10px;
 }
 
-.book-card p {
+.book-card1 p {
   margin: 5px 0;
   font-size: 14px;
 }
 
-.book-rating {
+.book-rating1 {
   margin: 1px 0;
 }
 
-.book-card p.book-title {
-  color: black;
+.book-card1 p.book-title1 {
+  color: blue;
+  font-weight: bold;
 }
 
-.book-card p.book-author {
-  color: rgb(213, 63, 188);
+.book-card1 p.book-author1 {
+  color: red;
 }
 
-.book-card p.book-amount {
+.book-card1 p.book-amount1 {
   color: #347134;
   font-weight: bold;
 }
 
-.book-card:hover {
+.book-card1:hover {
   transform: scale(1.05);
 }
 
-.book-card:hover img {
+.book-card1:hover img {
   transform: scale(1.1);
   background-color: rgba(242, 120, 193, 0.449);
 }
 
-.go-button {
+.go-button1 {
   color: white;
   text-decoration: none;
   font-size: 15px;
   display: inline-block;
+  margin-left: 10px;
   padding: 10px 0;
-  background-color: #347134;
+  background-color: #65B741;
   border-radius: 50px;
   width: 100px;
   text-align: center;
@@ -86,73 +79,71 @@
   line-height: 10px;
   transition: background-color 0.3s, color 0.3s;
   border: none;
-  margin-left: 28px;
+  margin-left: 48px;
 }
 
-.go-button:hover {
-  background-color: #5cb85c;
+.navbar1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.clear-filter-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.navbar-left1 {
+    flex: 1;
 }
 
-.clear-filter-button:hover {
-  background-color: #c9302c;
-}
-.categories
-{
-  background-color: #f0f0f0;
-  margin-top: 30px;
-}
-.categories h2 {
-  font-size: 40px;
-  padding-bottom: 10px;
+.navbar-center1 {
+    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
-.genre-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+.navbar-right1 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.genre-card {
-  overflow: hidden;
+.back-button1 {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-bar1 {
+    width: 30%;
+    padding: 10px 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.user-icon1 {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-bar-container1 {
   position: relative;
-  width: calc(25% - 30px);
-  border: 2px solid black;
-  height: 150px; /* Fixed height for genre cards */
-  cursor: pointer;
-}
-
-.genre-card img {
   width: 100%;
-  height: 100%;
-  transition: transform 0.3s;
 }
 
-.genre-card:hover img {
-  transform: scale(1.1);
+.search-bar1 {
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* Add padding on the right to make space for the icon */
+  border: 1px solid black;
+  border-radius: 4px;
 }
 
-.genre-name {
+.search-icon1 {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  font-size: 14px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1px 10px;
-  border-radius: 5px;
-}
-
-.slick-slide {
-  display: flex;
-  justify-content: center;
+  right: 12px; /* Position the icon inside the input field */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
 }

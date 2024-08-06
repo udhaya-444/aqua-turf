@@ -3,6 +3,7 @@ import './Contact.css';
 
 const Contact = () => {
   return (
+    <div id="con">
     <div className="contact-page">
       <div className="contact-header">
         <h1>Contact Us</h1>
@@ -65,6 +66,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
