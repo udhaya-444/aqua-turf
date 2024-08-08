@@ -1,7 +1,8 @@
+// Signup.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Signup.css';
-import log1 from '../assets/images/log1.jpg';
+import Navbar from './Navbar';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -29,47 +30,35 @@ const Signup = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-    setErrors({
-      ...errors,
-      [name]: ''
-    });
+    setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: '' });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
       const newUser = {
-        ...formData,
-        username: formData.email // or any unique identifier
+        username: formData.username,  // Setting username as email
+        email: formData.email,
+        password: formData.password,
+        pno: formData.mobileNumber,
+        role: 'USER'  // Assuming a default role; adjust if needed
       };
 
-      // Check if the email is already registered
-      const users = JSON.parse(localStorage.getItem('users')) || [];
-      const existingUser = users.find(user => user.email === newUser.email);
-
-      if (existingUser) {
-        setErrors({ ...errors, api: 'Email is already registered' });
-        return;
-      }
-
       try {
-        const response = await fetch('http://localhost:8080/users/register', {
+        const response = await fetch('http://localhost:8080/login', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newUser),
         });
-  
+
         if (response.ok) {
-          // Store user data in localStorage
-          users.push(newUser);
-          localStorage.setItem('users', JSON.stringify(users));
-          navigate('/'); // Navigate to home page after successful registration
+          const result = await response.json();
+          if (result.success) {
+            navigate('/login'); // Navigate to login page after successful registration
+          } else {
+            setErrors({ ...errors, api: result.message });
+          }
         } else {
           const errorText = await response.text();
           setErrors({ ...errors, api: errorText });
@@ -81,22 +70,26 @@ const Signup = () => {
   };
 
   return (
+    <div>
+      <Navbar/>
     <div className="signup-container">
       <div className="signup-form">
         <div className="form-content">
           <h2>Signup</h2>
           <form onSubmit={handleSubmit}>
             <div>
-              <label>UserName:</label>
+              <label>Name:</label>
               <input
                 type="text"
-                name="firstName"
-                value={formData.firstName}
+                name="username"
+                value={formData.username}
                 onChange={handleChange}
                 required
               />
             </div>
-            
+            <div>
+           
+            </div>
             <div>
               <label>Email:</label>
               <input
@@ -137,11 +130,8 @@ const Signup = () => {
             <Link to="/login">Login</Link>
           </div>
         </div>
-        {/* Optional image
-        <div className="form-image">
-          <img src={log1} alt="Signup" />
-        </div> */}
       </div>
+    </div>
     </div>
   );
 };

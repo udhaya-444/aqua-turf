@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './TrufBookingSystem.css';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const TimeSlotSelector = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -48,6 +49,8 @@ const TimeSlotSelector = () => {
   if (!isVisible) return null;
 
   return (
+    <div>
+      <Navbar/>
     <div className="background-containerts">
       <div className="containerts">
         <button className="close-btnts" onClick={handleClose}>&times;</button>
@@ -82,6 +85,7 @@ const TimeSlotSelector = () => {
             {bookingMessage}
           </div>
         )}
+      </div>
       </div>
     </div>
   );

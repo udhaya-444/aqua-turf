@@ -1,54 +1,53 @@
 /* src/components/Admin.css */
 .admin-page {
-    padding: 20px;
-  }
-  
-  .dashboard {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .dashboard-section {
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .dashboard-section li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .delete-button {
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .delete-button:hover {
-    background-color: darkred;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .btn:hover {
-    background-color: #218838;
-  }
-  
+  padding: 20px;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-section {
+  margin-bottom: 20px;
+}
+
+.dashboard-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard-section li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #218838;
+}

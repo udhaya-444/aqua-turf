@@ -107,3 +107,96 @@ cursor: pointer;
 .clear-filter-button2:hover {
 background-color: #c9302c;
 }
+.navbar2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left2 {
+  flex: 1;
+}
+
+.navbar-center2 {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-right2 {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.back-button2 {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-bar2 {
+  width: 20%;
+  padding: 10px 6px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.user-icon2 {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-bar-container2 {
+position: relative;
+width: 45%;
+margin-right: -200px;
+}
+
+.search-bar2 {
+width: 60%;
+padding: 10px 40px 10px 12px; /* Add padding on the right to make space for the icon */
+border: 1px solid black;
+border-radius: 4px;
+}
+
+.search-icon2 {
+position: absolute;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+font-size: 18px;
+color: black;
+cursor: pointer;
+}
+.home-i2 .navbar2 h2{
+  margin-left: 200px;
+}
+.clear-filter-button2 {
+  display: block;
+  margin: 20px auto; /* Center the button horizontally */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d9534f; /* Red color for the button */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: fit-content;
+}
+
+.clear-filter-button2:hover {
+  background-color: #c9302c; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.clear-filter-button1:focus {
+  outline: none;
+  box-shadow: 0 0 5px #d9534f;
+}

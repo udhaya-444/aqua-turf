@@ -24,7 +24,7 @@ body {
     box-shadow: 0 0 10px rgba(198, 23, 23, 0.1);
     border-radius: 10px;
     position: relative;
-    margin-top: 150px; /* Added this for the close button positioning */
+
 }
 
 h2 {

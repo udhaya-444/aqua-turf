@@ -18,6 +18,7 @@ import Footer from './Footer';
 const images = [home1, home2, home3];
 
 function Home() {
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
@@ -35,7 +36,7 @@ function Home() {
 
   return (
     <div>
-      <Navbar /> 
+    <Navbar/>
       <Video />
     <div className="home-container">
       <div className="carousel-container">

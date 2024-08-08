@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './OrderPage.css';
+import Navbar from './Navbar';
 
 const OrderPage = () => {
   const [paymentMethod, setPaymentMethod] = useState('card');
@@ -34,6 +35,8 @@ const OrderPage = () => {
   }
 
   return (
+    <div>
+      <Navbar/>
     <div className="order-page">
       <div className="payment-page">
         <div className="close-button" onClick={handleClose}>×</div>
@@ -76,6 +79,7 @@ const OrderPage = () => {
           <button type="submit" className="submit-btn">Place Booking</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

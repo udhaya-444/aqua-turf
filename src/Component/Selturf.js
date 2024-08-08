@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
 const Selturf = ({ searchQuery }) => {
   const [filteredTurfs, setFilteredTurfs] = useState([]);
   const [filterApplied, setFilterApplied] = useState(false);
+  const [searchInput, setSearchInput] = useState(searchQuery || '');
   const navigate = useNavigate();
   const turfs = [
     { id: 1, name: 'A2B Turf', location: 'Gandhipuram', amount: '₹1000/hr', rating: 4.5, description: 'A premier turf with top-notch facilities and well-maintained grounds. Ideal for competitive games and tournaments.', imgSrc: as4 },
@@ -42,24 +43,36 @@ const Selturf = ({ searchQuery }) => {
   { id: 17, name: 'Sports Street', location: 'Gandipuram', amount: '₹85/hr', rating: 4.1, imgSrc: selimgc4, description: 'Offers a great atmosphere and a well-maintained field, ideal for both casual and competitive games.' },
   { id: 18, name: 'Astro Turf', location: 'Sulur', amount: '₹75/hr', rating: 3.9, imgSrc: selimgc6, description: 'A versatile turf with good facilities, suitable for various sports and recreational activities.' }
   ];
-
-
-
   useEffect(() => {
     if (searchQuery) {
-      const filtered = turfs.filter(turf => turf.location.toLowerCase().includes(searchQuery.toLowerCase()));
-      setFilteredTurfs(filtered);
-      setFilterApplied(true);
-    } else {
-      setFilteredTurfs([]);
-      setFilterApplied(false);
+      filterTurfs(searchQuery);
     }
   }, [searchQuery]);
+
+  const filterTurfs = (query) => {
+    const filtered = turfs.filter(turf =>
+      turf.location.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredTurfs(filtered);
+    setFilterApplied(true);
+  };
+
+  const handleInputChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      filterTurfs(searchInput);
+    }
+  };
 
   const handleClearFilter = () => {
     setFilteredTurfs([]);
     setFilterApplied(false);
+    setSearchInput(''); // Clear search input
   };
+
   const handleViewClick = (turf) => {
     navigate('/time', { state: { amount: turf.amount } });
   };
@@ -71,23 +84,28 @@ const Selturf = ({ searchQuery }) => {
     <div className="home-i1">
       <nav className="navbar1">
             <div className="navbar-left1">
-                <button className="back-button1">                    <Link to ="/">
+                <button className="back-button1">                    <Link to ="/book">
                      <FaArrowLeft />
                     </Link>
                 </button>             </div>
+                <h2>Recommended Cricket and Football Turfs</h2>
                 <div className="navbar-center1">
           <div className="search-bar-container1">
-            <input
+          <input
               type="text"
               placeholder="Search"
               className="search-bar1"
+              value={searchInput}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
             />
-            <FaSearch className="search-icon1" />
+             <FaSearch className="search-icon1" onClick={() => filterTurfs(searchInput)} />
           </div>
         </div>
         </nav>
       <section className="recommended1">
-        <h2>Recommended Cricket and Football Turfs</h2>
+        <h2></h2>
+        {/* <h2>Recommended Cricket and Football Turfs</h2> */}
         <div className="book-cards1">
           {displayTurfs.map(turf => (
             <div className="book-card-container1" key={turf.id}>

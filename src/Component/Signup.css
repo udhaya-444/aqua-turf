@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+ 
 }
 
 .linb::before {
@@ -41,7 +42,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
-  margin-top: 100px;
+  margin-bottom: 100px;
   height: auto;
   box-shadow: 0 0 10px rgba(75, 183, 69, 0.1);
 }

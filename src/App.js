@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Component/Navbar';
@@ -18,6 +19,9 @@ import PaymentPage from './Component/PaymentPage';
 import Admin from './Component/Admin';
 
 import AddUser from './Component/AddUser';
+import AdminLayout from './Component/AdminLayout';
+import UserManagement from './Component/UserManagement';
+import TurfManagement from './Component/TurfManagement';
 
 
 function App() {
@@ -40,8 +44,11 @@ function App() {
           <Route path="/aquasel" element={<Aquasel />} />
           <Route path="/badsel" element={<Badsel />} />
           <Route path="/time" element={<TimeSlotSelector />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin/>} />
+          {/* <Route index element={<Admin />} /> */}
           <Route path="/add-user" element={<AddUser />} />
+          <Route path="/user" element={<UserManagement />} />
+          <Route path="/turf" element={< TurfManagement/>} />
         </Routes>
           
       </div>

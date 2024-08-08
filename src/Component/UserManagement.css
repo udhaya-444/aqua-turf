@@ -1,0 +1,120 @@
+/* Add your custom styles here */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    margin-top: 0px;
+  }
+  
+  .user-manage h1 {
+    margin-top: 80px;
+    text-align: center;
+    color: darkslategray;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .user-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  .add-button
+  {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .delete-button {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .add-user-form {
+    margin: 20px 0;
+  }
+  
+  .add-user-form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .add-user-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+
+  /* UserManagement.css */
+
+.user-manage {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .add-user-form {
+    position: fixed; /* Position the form fixed on the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the form */
+    background-color: #fff; /* Optional: Add a background color */
+    padding: 20px;
+    border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
+    z-index: 1000; /* Ensure the form appears above other elements */
+  }
+  
+  .add-button {
+    margin-top: 10px;
+  }
+  
+  /* Add styles for the toggle button */
+  .toggle-form-button {
+    margin-bottom: 20px;
+  }
+
+  .close-icon {
+    position: absolute; /* Position the close icon absolutely */
+    top: 10px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    cursor: pointer;
+    font-size: 20px; /* Adjust size as needed */
+    color: #333; /* Adjust color as needed */
+  }
+  

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import './Badsel.css';
+import { FaArrowLeft, FaSearch, FaUserCircle } from 'react-icons/fa'; 
 import home1 from '../assets/images/home1.jpg'; 
 import home2 from '../assets/images/home2.jpg'; 
 import home3 from '../assets/images/home3.jpg'; 
@@ -12,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 const Badsel = ({ searchQuery }) => {
   const [filteredTurfs, setFilteredTurfs] = useState([]);
   const [filterApplied, setFilterApplied] = useState(false);
+  const [searchInput, setSearchInput] = useState(searchQuery || '');
   const navigate = useNavigate();
   const turfs = [
     { 
@@ -182,19 +184,34 @@ const Badsel = ({ searchQuery }) => {
 
   useEffect(() => {
     if (searchQuery) {
-      const filtered = turfs.filter(turf => turf.location.toLowerCase().includes(searchQuery.toLowerCase()));
-      setFilteredTurfs(filtered);
-      setFilterApplied(true);
-    } else {
-      setFilteredTurfs([]);
-      setFilterApplied(false);
+      filterTurfs(searchQuery);
     }
   }, [searchQuery]);
+
+  const filterTurfs = (query) => {
+    const filtered = turfs.filter(turf =>
+      turf.location.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredTurfs(filtered);
+    setFilterApplied(true);
+  };
+
+  const handleInputChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      filterTurfs(searchInput);
+    }
+  };
 
   const handleClearFilter = () => {
     setFilteredTurfs([]);
     setFilterApplied(false);
+    setSearchInput(''); // Clear search input
   };
+
   const handleViewClick = (turf) => {
     navigate('/time', { state: { amount: turf.amount } });
   };
@@ -203,9 +220,30 @@ const Badsel = ({ searchQuery }) => {
 
   return (
     <div className="home-i2">
-     
+     <nav className="navbar2">
+            <div className="navbar-left2">
+                <button className="back-button2">                    <Link to ="/book">
+                     <FaArrowLeft />
+                    </Link>
+                </button>             </div>
+                <h2>Recommended Cricket and Football Turfs</h2>
+                <div className="navbar-center2">
+          <div className="search-bar-container2">
+          <input
+              type="text"
+              placeholder="Search"
+              className="search-bar2"
+              value={searchInput}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
+            />
+            <FaSearch className="search-icon2" onClick={() => filterTurfs(searchInput)} />
+          </div>
+        </div>
+        </nav>
       <section className="recommended2">
-        <h2>Recommended Pools</h2>
+        {/* <h2>Recommended Pools</h2> */}
+        <h2></h2>
         <div className="book-cards2">
           {displayTurfs.map(turf => (
             <div className="book-card-container2" key={turf.id}>

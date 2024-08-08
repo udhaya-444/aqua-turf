@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo.avif';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -6,26 +6,46 @@ import './Navbar.css';
 
 function Navbar({ onSearch }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
+  const [userRole, setUserRole] = useState(''); // Manage user role
   const navigate = useNavigate();
 
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
+  useEffect(() => {
+    // Check if user is logged in
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+    
+    // Set user role if logged in
+    if (loggedIn) {
+      const role = localStorage.getItem('role');
+      setUserRole(role);
+    }
+  }, []);
+
+  // const handleLoginClick = () => {
+  //   navigate('/login');
+  // };
 
   const handleUserIconClick = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('role');
+    setIsLoggedIn(false);
+    navigate('/login');
   };
 
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    onSearch(searchQuery);
-    navigate('/selturf');
-  };
+  // const handleSearchChange = (event) => {
+  //   setSearchQuery(event.target.value);
+  // };
+
+  // const handleSearchSubmit = (event) => {
+  //   event.preventDefault();
+  //   onSearch(searchQuery);
+  //   navigate('/selturf');
+  // };
 
   return (
     <nav className="navbar">
@@ -40,30 +60,30 @@ function Navbar({ onSearch }) {
           <li><a href="#booki">Book</a></li>
           <li><a href="#mem">Membership</a></li>
           <li><a href="#con">Contact</a></li>
-        
         </ul>
       </div>
-      {/* <form className="navbar-search" onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          placeholder="Type here to Search"
-          value={searchQuery}
-          onChange={handleSearchChange}
-        />
-        <button type="submit">
-          <i className="fas fa-search search-icon"></i>
-        </button>
-      </form> */}
-      <div className="user-icon" onClick={handleUserIconClick}>
-        <i className="fas fa-user"></i>
-        {dropdownVisible && (
+      {isLoggedIn && (
+        <div className="user-icon" onClick={handleUserIconClick}>
+          <i className="fas fa-user"></i>
+          {dropdownVisible && (
+            <div className="dropdown-menu">
+              <Link to="/profile">My Profile</Link>
+              <Link onClick={handleLogout} className="logout-button">Logout</Link>
+            </div>
+          )}
+        </div>
+      )}
+      {!isLoggedIn && (
+        <div className="user-icon" onClick={handleUserIconClick}>
+          <i className="fas fa-user"></i>
+          {dropdownVisible && (
           <div className="dropdown-menu">
             <Link to="/login">Login</Link>
             <Link to="/signup">Signup</Link>
-            <Link to="/admin">My Account</Link>
           </div>
         )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 }

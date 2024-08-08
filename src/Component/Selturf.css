@@ -5,6 +5,10 @@
   justify-content: center; 
 }
 
+.home-i1 .navbar1 h2{
+  margin-left: 200px;
+}
+
 .book-card-container1 {
   flex: 1 1 250px; /* Adjust the size of each card */
   max-width: 250px; /* Ensure cards don’t exceed a certain width */
@@ -115,8 +119,8 @@
 }
 
 .search-bar1 {
-    width: 30%;
-    padding: 10px 12px;
+    width: 20%;
+    padding: 10px 6px;
     border: 1px solid black;
     border-radius: 4px;
 }
@@ -128,11 +132,12 @@
 
 .search-bar-container1 {
   position: relative;
-  width: 100%;
+  width: 45%;
+  margin-right: -200px;
 }
 
 .search-bar1 {
-  width: 100%;
+  width: 60%;
   padding: 10px 40px 10px 12px; /* Add padding on the right to make space for the icon */
   border: 1px solid black;
   border-radius: 4px;
@@ -140,10 +145,34 @@
 
 .search-icon1 {
   position: absolute;
-  right: 12px; /* Position the icon inside the input field */
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   font-size: 18px;
   color: black;
   cursor: pointer;
+}
+.clear-filter-button1 {
+  display: block;
+  margin: 20px auto; /* Center the button horizontally */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d9534f; /* Red color for the button */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: fit-content;
+}
+
+.clear-filter-button1:hover {
+  background-color: #c9302c; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.clear-filter-button1:focus {
+  outline: none;
+  box-shadow: 0 0 5px #d9534f;
 }

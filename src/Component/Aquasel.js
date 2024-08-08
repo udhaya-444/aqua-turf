@@ -9,10 +9,11 @@ import as1 from '../assets/images/as1.jpg';
 import as2 from '../assets/images/as2.avif';
 import as3 from '../assets/images/as3.jpg';
 import { useNavigate } from 'react-router-dom';
-
+import { FaArrowLeft, FaSearch, FaUserCircle } from 'react-icons/fa';
 const Aquasel = ({ searchQuery }) => {
   const [filteredTurfs, setFilteredTurfs] = useState([]);
   const [filterApplied, setFilterApplied] = useState(false);
+  const [searchInput, setSearchInput] = useState(searchQuery || '');
   const navigate = useNavigate();
   const turfs = [
     { id: 1, name: 'A2B Turf', location: 'Gandhipuram', amount: '₹1000/hr', rating: 4.5, description: 'A premier turf with top-notch facilities and well-maintained grounds. Ideal for competitive games and tournaments.', imgSrc: as3 },
@@ -39,19 +40,34 @@ const Aquasel = ({ searchQuery }) => {
 
   useEffect(() => {
     if (searchQuery) {
-      const filtered = turfs.filter(turf => turf.location.toLowerCase().includes(searchQuery.toLowerCase()));
-      setFilteredTurfs(filtered);
-      setFilterApplied(true);
-    } else {
-      setFilteredTurfs([]);
-      setFilterApplied(false);
+      filterTurfs(searchQuery);
     }
   }, [searchQuery]);
+
+  const filterTurfs = (query) => {
+    const filtered = turfs.filter(turf =>
+      turf.location.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredTurfs(filtered);
+    setFilterApplied(true);
+  };
+
+  const handleInputChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      filterTurfs(searchInput);
+    }
+  };
 
   const handleClearFilter = () => {
     setFilteredTurfs([]);
     setFilterApplied(false);
+    setSearchInput(''); // Clear search input
   };
+
   const handleViewClick = (turf) => {
     navigate('/time', { state: { amount: turf.amount } });
   };
@@ -60,9 +76,30 @@ const Aquasel = ({ searchQuery }) => {
 
   return (
     <div className="home-i3">
-      
+      <nav className="navbar3">
+            <div className="navbar-left3">
+                <button className="back-button3">                    <Link to ="/book">
+                     <FaArrowLeft />
+                    </Link>
+                </button>             </div>
+                <h2>Recommended Cricket and Football Turfs</h2>
+                <div className="navbar-center3">
+          <div className="search-bar-container3">
+          <input
+              type="text"
+              placeholder="Search"
+              className="search-bar3"
+              value={searchInput}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
+            />
+            <FaSearch className="search-icon3" onClick={() => filterTurfs(searchInput)} />
+          </div>
+        </div>
+        </nav>
       <section className="recommended3">
-        <h2>Recommended Badminton Turf</h2>
+        {/* <h2>Recommended Badminton Turf</h2> */}
+        <h2></h2>
         <div className="book-cards3">
           {displayTurfs.map(turf => (
             <div className="book-card-container3" key={turf.id}>

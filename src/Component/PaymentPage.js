@@ -6,6 +6,7 @@ import Feedback from './Feedback';
 import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
 import 'react-toastify/dist/ReactToastify.css'; // Import CSS for Toastify
 import Selturf from './Selturf';
+import Navbar from './Navbar';
 
 const PaymentPage = () => {
     const [paymentMethod, setPaymentMethod] = useState('card');
@@ -32,6 +33,8 @@ const PaymentPage = () => {
   
 
     return (
+        <div>
+            <Navbar/>
         <div className="payment-form">
             <h2>Payment Methods</h2>
             <form onSubmit={handleSubmit}>
@@ -102,6 +105,7 @@ const PaymentPage = () => {
                 <button type="submit" className="submit-button">Book Order</button>
             </form>
             <ToastContainer /> {/* Include ToastContainer to display toast notifications */}
+        </div>
         </div>
     );
 };
