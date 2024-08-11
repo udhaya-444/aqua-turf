@@ -1,9 +1,29 @@
-.body
-{
-  background-image: url('../assets/images/log1.jpg'); /* Replace with the path to your background image */
-  background-size: cover; /* Cover the entire container */
+
+.payment-page-container {
+  position: relative; /* Required for ::before positioning */
+  padding: 20px; /* Add some padding to avoid content touching the edges */
+  text-align: left;
+}
+.payment-form.close-button {
+  position: absolute;
+  margin-left: 200px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #010101; 
+}
+.payment-page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/images/log1.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
   background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
+  filter: blur(4px); /* Adjust the blur value as needed */
+  z-index: -1; /* Ensure the blurred image stays behind the content */
 }
 
 .payment-form {
@@ -11,7 +31,7 @@
   max-width: 400px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-  margin-top: 100px;
+  margin-bottom: 100px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);

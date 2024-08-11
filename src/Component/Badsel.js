@@ -18,7 +18,7 @@ const Badsel = ({ searchQuery }) => {
   const turfs = [
     { 
       id: 1, 
-      name: 'A2B Turf', 
+      name: 'A2B Pool', 
       location: 'Gandhipuram', 
       amount: '₹1000/hr', 
       rating: 4.5, 
@@ -27,7 +27,7 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 2, 
-      name: 'Arena 18 Turf', 
+      name: 'Arena 18 Pool', 
       location: 'Townhall', 
       amount: '₹80/hr', 
       rating: 3.0, 
@@ -36,7 +36,7 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 3, 
-      name: 'The Goat Club Turf', 
+      name: 'The Goat Club Pool', 
       location: 'Kovaipudur', 
       amount: '₹90/hr', 
       rating: 4.7, 
@@ -45,7 +45,7 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 4, 
-      name: 'One More Game', 
+      name: 'One More Swim', 
       location: 'Kunniyamuthur', 
       amount: '₹70/hr', 
       rating: 4.8, 
@@ -54,16 +54,16 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 5, 
-      name: 'Turf Zero', 
+      name: 'Swim Zero', 
       location: 'Gandipuram', 
       amount: '₹85/hr', 
       rating: 4.1, 
       imgSrc: as2,
-      description: 'Features a smooth playing surface and great lighting, making it a go-to spot for evening games.'
+      description: 'Features a smooth playing surface and great lighting,..'
     },
     { 
       id: 6, 
-      name: 'Game Zone', 
+      name: 'Game Swim', 
       location: 'Sulur', 
       amount: '₹75/hr', 
       rating: 3.9, 
@@ -72,7 +72,7 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 7, 
-      name: 'FrreHit Turf', 
+      name: 'FrreHit Pool', 
       location: 'Gandhipuram', 
       amount: '₹100/hr', 
       rating: 4.5, 
@@ -81,16 +81,16 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 8, 
-      name: '404 Arena Turf', 
+      name: '404 Arena Pool', 
       location: 'Townhall', 
       amount: '₹80/hr', 
       rating: 4.0, 
       imgSrc: as2,
-      description: 'A versatile turf with a great playing surface and competitive pricing, suitable for various events.'
+      description: 'A versatile turf with a great playing surface and competitive pricing.'
     },
     { 
       id: 9, 
-      name: 'Spin City Turf', 
+      name: 'Spin City Pool', 
       location: 'Kovaipudur', 
       amount: '₹90/hr', 
       rating: 4.2, 
@@ -99,7 +99,7 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 10, 
-      name: 'Balls and Strikes', 
+      name: 'Pool and Swim', 
       location: 'Kunniyamuthur', 
       amount: '₹70/hr', 
       rating: 4.8, 
@@ -108,25 +108,25 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 11, 
-      name: 'Cross Bar', 
+      name: 'Cross Swim', 
       location: 'Gandipuram', 
       amount: '₹85/hr', 
       rating: 4.1, 
       imgSrc: as2,
-      description: 'Features well-maintained courts and supportive staff, making it an excellent choice for group events.'
+      description: 'Features well-maintained courts and supportive staff..'
     },
     { 
       id: 12, 
-      name: 'Hit-N Run', 
+      name: 'Hit-N Swim', 
       location: 'Sulur', 
       amount: '₹75/hr', 
       rating: 3.9, 
       imgSrc: as3,
-      description: 'Provides a relaxed environment with essential amenities, perfect for informal gatherings and practice sessions.'
+      description: 'Provides a relaxed environment with essential amenities.'
     },
     { 
       id: 13, 
-      name: 'Goa Turf', 
+      name: 'Goa Swim', 
       location: 'Gandhipuram', 
       amount: '₹100/hr', 
       rating: 4.5, 
@@ -135,7 +135,7 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 14, 
-      name: 'FoodWork Turf', 
+      name: 'FoodWork  Swim', 
       location: 'Townhall', 
       amount: '₹80/hr', 
       rating: 4.0, 
@@ -144,7 +144,7 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 15, 
-      name: 'Area 461 Turf', 
+      name: 'Area 461 Swim', 
       location: 'Kovaipudur', 
       amount: '₹90/hr', 
       rating: 4.2, 
@@ -162,16 +162,16 @@ const Badsel = ({ searchQuery }) => {
     },
     { 
       id: 17, 
-      name: 'Sports Street', 
+      name: 'Swim Street', 
       location: 'Gandipuram', 
       amount: '₹85/hr', 
       rating: 4.1, 
       imgSrc: as2,
-      description: 'Features a versatile setup with a focus on providing a great playing experience and excellent service.'
+      description: 'Features a versatile setup with a focus on providing a great..'
     },
     { 
       id: 18, 
-      name: 'Astro Turf', 
+      name: 'Astro Pool', 
       location: 'Sulur', 
       amount: '₹75/hr', 
       rating: 3.9, 
@@ -222,7 +222,7 @@ const Badsel = ({ searchQuery }) => {
     <div className="home-i2">
      <nav className="navbar2">
             <div className="navbar-left2">
-                <button className="back-button2">                    <Link to ="/book">
+                <button className="back-button2">                    <Link to ="/">
                      <FaArrowLeft />
                     </Link>
                 </button>             </div>

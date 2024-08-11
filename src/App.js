@@ -22,6 +22,9 @@ import AddUser from './Component/AddUser';
 import AdminLayout from './Component/AdminLayout';
 import UserManagement from './Component/UserManagement';
 import TurfManagement from './Component/TurfManagement';
+import Profile from './Component/Profile';
+import CategoryManagement from './Component/CategoryManagement';
+import Timemanage from './Component/Timemanage';
 
 
 function App() {
@@ -34,12 +37,13 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/book" element={<Book />} />
-          {/* <Route path="/membership" element={<Membership />} /> */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/membership" element={<Membership />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/order" element={<OrderPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/selturf" element={<Selturf />} />
           <Route path="/aquasel" element={<Aquasel />} />
           <Route path="/badsel" element={<Badsel />} />
@@ -49,6 +53,8 @@ function App() {
           <Route path="/add-user" element={<AddUser />} />
           <Route path="/user" element={<UserManagement />} />
           <Route path="/turf" element={< TurfManagement/>} />
+          <Route path="/cart" element={< CategoryManagement/>} />
+          <Route path="/timeadmin" element={< Timemanage/>} />
         </Routes>
           
       </div>

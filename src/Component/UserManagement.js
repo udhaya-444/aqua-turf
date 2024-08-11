@@ -62,6 +62,9 @@ const UserManagement = () => {
       <h1>User Management</h1>
       {error && <p className="error-message">{error}</p>}
       {success && <p className="success-message">{success}</p>}
+                <button onClick={() => setShowForm(prev => !prev)} className="add-button">
+                  {showForm ? 'Cancel' : 'Add User'}
+                </button>
       
       {showForm && (
         <div className="form-container">
@@ -94,6 +97,7 @@ const UserManagement = () => {
       <table className="user-table">
         <thead>
           <tr>
+            <th>Id</th>
             <th>Username</th>
             <th>Email</th>
             <th>Role</th>
@@ -103,14 +107,12 @@ const UserManagement = () => {
         <tbody>
           {users.map(user => (
             <tr key={user.id}>
+              <td>{user.id}</td>
               <td>{user.username}</td>
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td>
                 <button onClick={() => deleteUser(user.id)} className="delete-button">Delete</button>
-                <button onClick={() => setShowForm(prev => !prev)} className="add-button">
-                  {showForm ? 'Cancel' : 'Add User'}
-                </button>
               </td>
             </tr>
           ))}

@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import CSS for Toastify
 import Selturf from './Selturf';
 import Navbar from './Navbar';
-
+import { Link } from 'react-router-dom';
 const PaymentPage = () => {
     const [paymentMethod, setPaymentMethod] = useState('card');
     const [showFeedback, setShowFeedback] = useState(false); // State to control feedback form display
@@ -28,14 +28,20 @@ const PaymentPage = () => {
       });
       // Optionally show feedback form here
       // setShowFeedback(true); // Show feedback form
+      
+ 
+    navigate('/time');
+  
   };
 
   
 
     return (
         <div>
-            <Navbar/>
+       <Navbar/>
+        <div className="payment-page-container">
         <div className="payment-form">
+        <div className="close-button"><Link to ="/order">X</Link></div>
             <h2>Payment Methods</h2>
             <form onSubmit={handleSubmit}>
                 <div className="payment-options">
@@ -105,6 +111,7 @@ const PaymentPage = () => {
                 <button type="submit" className="submit-button">Book Order</button>
             </form>
             <ToastContainer /> {/* Include ToastContainer to display toast notifications */}
+        </div>
         </div>
         </div>
     );

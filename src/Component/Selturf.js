@@ -84,7 +84,7 @@ const Selturf = ({ searchQuery }) => {
     <div className="home-i1">
       <nav className="navbar1">
             <div className="navbar-left1">
-                <button className="back-button1">                    <Link to ="/book">
+                <button className="back-button1">                    <Link to ="/">
                      <FaArrowLeft />
                     </Link>
                 </button>             </div>

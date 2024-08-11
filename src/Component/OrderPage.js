@@ -14,7 +14,7 @@ const OrderPage = () => {
   const amount = location.state?.amount || totalPrice;
 
   const handleClose = () => {
-    setShowForm(false);
+    setShowForm(false)  ;
     navigate('/time');
   };
 

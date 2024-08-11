@@ -78,7 +78,7 @@ const Admin = () => {
             <Card>
               <CardContent>
                 <Typography variant="h6">Total Earnings</Typography>
-                <Typography variant="h4">$88,364</Typography>
+                <Typography variant="h4">88,364</Typography>
                 <Typography variant="subtitle2" color="textSecondary">-13% than last week</Typography>
               </CardContent>
             </Card>

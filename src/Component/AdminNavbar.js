@@ -32,9 +32,11 @@ const AdminNavbar = () => {
           TurfSplaz
         </Typography>
         <div>
-          <Button component={Link} to="/user" sx={{ color: 'inherit', textTransform: 'none', fontSize: '1.25rem' }}>User Management</Button>
-          <Button component={Link} to="/turf" sx={{ color: 'inherit', textTransform: 'none' , fontSize:'1.25rem'}}>Turf Management</Button>
-          <Button component={Link} to="/pay" sx={{ color: 'inherit', textTransform: 'none', fontSize:'1.25rem'}}>Booking Management</Button>
+          <Button component={Link} to="/user" sx={{ color: 'inherit', textTransform: 'none', fontSize: '1.25rem' }}>User</Button>
+          <Button component={Link} to="/turf" sx={{ color: 'inherit', textTransform: 'none' , fontSize:'1.25rem'}}>Turf</Button>
+          <Button component={Link} to="/pay" sx={{ color: 'inherit', textTransform: 'none', fontSize:'1.25rem'}}>Booking</Button>
+          <Button component={Link} to="/cart" sx={{ color: 'inherit', textTransform: 'none', fontSize:'1.25rem'}}>Category</Button>
+          <Button component={Link} to="/timeadmin" sx={{ color: 'inherit', textTransform: 'none', fontSize:'1.25rem'}}>Time</Button>
         </div>
         <IconButton edge="end" color="inherit" onClick={handleMenuOpen}>
           <Avatar alt="Profile" src="/path-to-profile-image.jpg" />
